@@ -9,7 +9,7 @@ GOBJECT_LIBDIR=`pkg-config --libs-only-L gobject-introspection-1.0 2>/dev/null |
 GOBJECT_DIR=`dirname "${GOBJECT_LIBDIR}"`
 for prefix in $PREFIX GOBJECT_DIR /usr/local /usr ; do
 	gir_dir=${prefix}/share/gir-1.0
-	gir=${gir_dir}/${module}.gir
+	gir=${gir_dir}/${Module}.gir
 	if [ -e "${gir}" ] ; then
 		export GIR=${gir}
 		export GIR_DIR=${gir_dir}
@@ -21,7 +21,7 @@ if [ ! -e "${GIR}" ] ; then
 	echo "and can be found in /usr /usr/local or by pkg-config!"
 	exit 1
 fi
-gir2swift -p ${GIR_DIR}/GLib-2.0.gir -p ${GIR_DIR}/GObject-2.0.gir "${GIR}" | sed -f ${module}.sed > Sources/${Module}.swift
+gir2swift -p ${GIR_DIR}/GLib-2.0.gir -p ${GIR_DIR}/GObject-2.0.gir "${GIR}" | sed -f ${Module}.sed > Sources/${Module}.swift
 #echo  > Sources/Swift${Mod}.swift "import CGLib"
 #echo  > Sources/Swift${Mod}.swift "import CCairo"
 #echo >> Sources/Swift${Mod}.swift "import GLib"
