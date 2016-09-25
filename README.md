@@ -9,7 +9,7 @@ A Swift wrapper around cogl that is largely auto-generated from gobject-introspe
 To build, you need Swift 3.0 (download from https://swift.org/download/ -- if you are using macOS, make sure you have the command line tools installed as well).  Test that your compiler works using `swift --version`, which should give you something like
 
 	$ swift --version
-	Apple Swift version 3.0 (swiftlang-800.0.46.2 clang-800.0.38)
+	Apple Swift version 3.0 (swiftlang-800.0.49 clang-800.0.40)
 	Target: x86_64-apple-macosx10.9
 
 on macOS, or on Linux you should get something like:
