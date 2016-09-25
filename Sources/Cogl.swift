@@ -22,11 +22,11 @@ public typealias Fixed = CoglFixed
 /// Some convenience methods for the fixed-point type
 public extension Fixed {
     /// Create a fixed-point number from a Double
-    public init(_ d: Double) { self = cogl_double_to_fixed(d) }
+    public init(doubleValue d: Double) { self = cogl_double_to_fixed(d) }
     /// Create a fixed-point number from a Float
-    public init(_ f: Float) { self = cogl_double_to_fixed(Double(f)) }
+    public init(floatValue f: Float) { self = cogl_double_to_fixed(Double(f)) }
     /// Create a fixed-point number from an Int
-    public init(_ i: Int) { self = CInt(i) << FIXED_Q }
+    public init(intValue i: Int) { self = CInt(i) << FIXED_Q }
 
     /// Truncated integer representation of the fixed-point value
     public var intValue: Int {
@@ -59,17 +59,17 @@ public func atan(_ a: Fixed) -> Angle { return cogl_fixed_atan(a) }
 /// Compute the principal value in fixed point notation
 /// of the arc tangent of `y/x`, using the signs of both arguments
 /// to determine the quadrant of the return value.
-public func atan2(_ a: Fixed, b: Fixed) -> Angle { return cogl_fixed_atan2(a, b) }
+public func atan2(_ a: Fixed, _ b: Fixed) -> Angle { return cogl_fixed_atan2(a, b) }
 
 /// Multiply two fixed-point numbers.
-public func mul(_ a: Fixed, b: Fixed) -> Fixed { return cogl_fixed_mul(a, b) }
+public func mul(_ a: Fixed, _ b: Fixed) -> Fixed { return cogl_fixed_mul(a, b) }
 
 /// Divide two fixed-point numbers.
-public func div(_ a: Fixed, b: Fixed) -> Fixed { return cogl_fixed_div(a, b) }
+public func div(_ a: Fixed, _ b: Fixed) -> Fixed { return cogl_fixed_div(a, b) }
 
 /// Multiplies two fixed-point values and then divide the result
 /// by a third fixed-point value.
-public func mul_div(_ a: Fixed, b: Fixed, c: Fixed) -> Fixed { return cogl_fixed_mul_div(a, b, c) }
+public func mul_div(_ a: Fixed, _ b: Fixed, _ c: Fixed) -> Fixed { return cogl_fixed_mul_div(a, b, c) }
 
 /// Calculate the square root of a fixed-point number
 public func sqrt(_ x: Fixed) -> Fixed { return cogl_fixed_sqrt(x) }
@@ -84,4 +84,4 @@ public func log2(_ x: Int) -> Fixed {
 public func pow2(_ a: Fixed) -> Int { return Int(cogl_fixed_pow2(a)) }
 
 /// Calculate x to the power of a.
-public func pow(_ x: Int, a: Fixed) -> Int { return Int(cogl_fixed_pow(CUnsignedInt(x), a)) }
+public func pow(_ x: Int, _ a: Fixed) -> Int { return Int(cogl_fixed_pow(CUnsignedInt(x), a)) }
