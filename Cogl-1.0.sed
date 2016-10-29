@@ -11,3 +11,4 @@ s/public var layers:/@available(*, deprecated) public var layers:/
 s/public func clutterCheckExtensionCLUTTER/@available(*, deprecated) public func clutterCheckExtensionCLUTTER/
 s/public func clutterWinsysHasFeatureCLUTTER/@available(*, deprecated) public func clutterWinsysHasFeatureCLUTTER/
 s/public func framebufferGetColorFormat/@available(*, deprecated) public func framebufferGetColorFormat/
+s/: \([A-Za-z]*Func[,)]\)/: @escaping \1/g
