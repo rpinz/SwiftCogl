@@ -8,7 +8,7 @@
 import CGLib
 import CCogl
 import GLib
-import GObject
+import GLibObject
 
 /// A Cogl texture
 public typealias CoglTexture = _CoglTexture
