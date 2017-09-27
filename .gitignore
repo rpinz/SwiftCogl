@@ -2,3 +2,6 @@
 /.build
 /Packages
 /*.xcodeproj
+Package.resolved
+Package.pins
+Sources/Cogl-1.0.swift
