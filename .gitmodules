@@ -1,0 +1,3 @@
+[submodule "Library/CCogl"]
+	path = Library/CCogl
+	url = https://github.com/rpinz/CCogl
